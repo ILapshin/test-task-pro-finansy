@@ -11,6 +11,7 @@ router = APIRouter(
     tags=['API v1']
 )
 
+
 @router.post('/', status_code=status.HTTP_201_CREATED)
 def create_task(request: schemas.Input):
 
@@ -41,5 +42,3 @@ def get_task_list():
 @router.get('/{task_id}/', status_code=status.HTTP_200_OK)
 def get_result(task_id: str):
     return JSONResponse(service.get_task_result(task_id))
-
-

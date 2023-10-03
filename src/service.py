@@ -8,7 +8,7 @@ from config import redis_url
 celery = Celery('celery', broker=redis_url, backend=redis_url)
 
 @celery.task
-async def calculate(x, y, op):
+def calculate(x, y, op):
     if op == '+':
         return x + y
     if op == '-':
